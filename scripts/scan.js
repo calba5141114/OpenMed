@@ -18,7 +18,7 @@ async function spawnMarkdown(title){
 function makeLink(title){
 return `
   <li id="${title}" class="list-group-item">
-    <a href="javascript:spawnMarkdown(${title})" >  ${formatTitle(title)} </a>
+    <a href="javascript:spawnMarkdown('${title}')" >  ${formatTitle(title)} </a>
   </li>
   `
 }
