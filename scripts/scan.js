@@ -1,6 +1,10 @@
 const converter = new showdown.Converter();
 const rootDirectory = 'https://calba5141114.github.io/OpenMed/documents'
 
+function formatTitle(title){
+  return title.split('-')[1]
+}
+
 // closed for testing
 // async function getMarkdownfiles(){
 //   const dir  = 'https://calba5141114.github.io/OpenMed/documents/documents.json';
