@@ -1,3 +1,4 @@
+const converter = new showdown.Converter();
 
 async function getMarkdownfiles(){
   const dir  = 'https://calba5141114.github.io/OpenMed/documents/documents.json';
