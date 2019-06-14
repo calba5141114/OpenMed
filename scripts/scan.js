@@ -1,5 +1,5 @@
 const converter = new showdown.Converter();
-const rootDirectory = 'https://calba5141114.github.io/OpenMed/documents/'
+const rootDirectory = 'https://calba5141114.github.io/OpenMed/documents'
 
 async function getMarkdownfiles(){
   const dir  = 'https://calba5141114.github.io/OpenMed/documents/documents.json';
@@ -7,7 +7,9 @@ async function getMarkdownfiles(){
   const data = await response.json();
 
   for (page of data) {
-    console.log(page.title);
+    const pageData = await fetch(`${rootDirectory}/${page.title}`)
+    console.log(`${rootDirectory}/${page.title}`);
+    console.log(pageData.body);
   }
 
 }
