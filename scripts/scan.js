@@ -27,27 +27,18 @@ return `
 
 
 // closed for testing
-// async function getMarkdownfiles(){
-//   const dir  = 'https://calba5141114.github.io/OpenMed/documents/documents.json';
-//   const response = await fetch(dir);
-//   const data = await response.json();
-//
-//   // for every document in the directory
-//   for (page of data) {
-//     // fetching markdown document
-//     const pageData = await fetch(`${rootDirectory}/${page.title}`)
-//     // converting page data to an arrayBuffer
-//     const loaded = await pageData.arrayBuffer()
-//     // converting arrayBuffer to string
-//     var string = new TextDecoder("utf-8").decode(loaded);
-//     // converting markdown document our string to html
-//     const generatedHTML =  converter.makeHtml(string);
-//     // opening newly generatedHTML
-//     const opened = window.open("");
-//     opened.document.write(generatedHTML);
-//   }
-//
-// }
+async function getMarkdownfiles(){
+  const dir  = 'https://calba5141114.github.io/OpenMed/documents/documents.json';
+  const response = await fetch(dir);
+  const data = await response.json();
+
+  // for every document in the directory
+  for (page of data) {
+    linkList.innerHTML += makeLink(page.title)
+  }
+
+}
+
 //
 //
 //
