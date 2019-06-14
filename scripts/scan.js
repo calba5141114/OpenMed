@@ -12,6 +12,7 @@ async function getMarkdownfiles(){
     const pageData = await fetch(`${rootDirectory}/${page.title}`)
     // converting page data to an arrayBuffer
     const loaded = await pageData.arrayBuffer()
+    // converting arrayBuffer to string
     var string = new TextDecoder("utf-8").decode(loaded);
     const generatedHTML =  converter.makeHtml(string);
     console.log(generatedHTML);
