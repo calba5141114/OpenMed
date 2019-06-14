@@ -1,8 +1,11 @@
 
 async function getMarkdownfiles(){
   const dir  = 'https://calba5141114.github.io/OpenMed/documents/documents.json';
-  const response = fetch(dir);
-  const json = await response.json();
+  const response = await fetch(dir);
+  const data = response.json();
+  for (var i = 0; i < data.length; i++) {
+      console.log(data[i]);
+  }
   return json;
 }
 
