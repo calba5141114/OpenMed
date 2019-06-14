@@ -5,6 +5,24 @@ function formatTitle(title){
   return title.split('-')[1]
 }
 
+function spawnMarkdown(title){
+   const pageData = await fetch(`${rootDirectory}/${title}`)
+   const loaded = await pageData.arrayBuffer();
+   let string = new TextDecoder("utf-8").decode(loaded);
+   const generatedHTML =  converter.makeHtml(string);
+   const opened = window.open("");
+   opened.document.write(generatedHTML);
+}
+
+function makeLink(title){
+return `
+  <li id="${title}" class="list-group-item">
+    <a href="javascript:spawnMarkdown(${title})" >  ${formatTitle(title)} </a>
+  </li>
+  `
+}
+
+
 // closed for testing
 // async function getMarkdownfiles(){
 //   const dir  = 'https://calba5141114.github.io/OpenMed/documents/documents.json';
