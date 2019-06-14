@@ -6,7 +6,7 @@ function formatTitle(title){
   return title.split('-')[1]
 }
 
-function spawnMarkdown(title){
+async function spawnMarkdown(title){
    const pageData = await fetch(`${rootDirectory}/${title}`)
    const loaded = await pageData.arrayBuffer();
    let string = new TextDecoder("utf-8").decode(loaded);
