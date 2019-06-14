@@ -14,6 +14,7 @@ async function getMarkdownfiles(){
     const loaded = await pageData.arrayBuffer()
     // converting arrayBuffer to string
     var string = new TextDecoder("utf-8").decode(loaded);
+    // converting markdown document our string to html
     const generatedHTML =  converter.makeHtml(string);
     console.log(generatedHTML);
   }
