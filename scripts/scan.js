@@ -1,5 +1,5 @@
 const converter = new showdown.Converter();
-const rootDirectory = 'https://calba5141114.github.io/OpenMed/documents'
+const rootDirectory = 'https://calba5141114.github.io/OpenMed/documents';
 const linkList = document.querySelector('#linkList');
 
 function formatTitle(title){
