@@ -10,9 +10,10 @@ async function getMarkdownfiles(){
     const pageData = await fetch(`${rootDirectory}/${page.title}`)
     console.log(`${rootDirectory}/${page.title}`);
     const loaded = await pageData.arrayBuffer()
-    console.log(loaded);
-    // var string = new TextDecoder("utf-8").decode(loaded);
-    // console.log(string);
+    var string = new TextDecoder("utf-8").decode(loaded);
+    console.log(string);
+    const generatedHTML =  converter.makeHtml(string);
+    console.log(generatedHTML);
   }
 
 }
