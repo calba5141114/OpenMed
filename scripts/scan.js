@@ -16,7 +16,9 @@ async function getMarkdownfiles(){
     var string = new TextDecoder("utf-8").decode(loaded);
     // converting markdown document our string to html
     const generatedHTML =  converter.makeHtml(string);
-    console.log(generatedHTML);
+    // opening newly generatedHTML
+    const opened = window.open("");
+    opened.document.write(generatedHTML);
   }
 
 }
