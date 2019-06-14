@@ -9,7 +9,10 @@ async function getMarkdownfiles(){
   for (page of data) {
     const pageData = await fetch(`${rootDirectory}/${page.title}`)
     console.log(`${rootDirectory}/${page.title}`);
-    console.log(pageData.body);
+    const loaded = await pageData.arrayBuffer()
+    console.log(loaded);
+    // var string = new TextDecoder("utf-8").decode(loaded);
+    // console.log(string);
   }
 
 }
