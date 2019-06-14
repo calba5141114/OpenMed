@@ -1,15 +1,16 @@
 
 async function getMarkdownfiles(){
-  const directory  = 'https://calba5141114.github.io/OpenMed/documents/';
-  const data = await fetch(directory);
-  return data;
+  const dir  = 'https://calba5141114.github.io/OpenMed/documents/documents.json';
+  const response = fetch(directory)
 }
 
 
 
 if(window.File && window.FileReader && window.FileList && window.Blob){
   const data = getMarkdownfiles();
-  console.log(data);
+  for (var i = 0; i < data.length; i++) {
+      console.log(data[i]);
+  }
 }
 else {
   alert('The File APIs are not fully supported in this browser.');
