@@ -1,0 +1,9 @@
+{
+  "name": "OpenMed",
+  "version": "1.0.0",
+  "description": "An educational platform for anyone to share information about medicine, medical advice and etc.",
+  "main": "index.js",
+  "repository": "https://github.com/calba5141114/OpenMed.git",
+  "author": "Carlos A Alba",
+  "license": "MIT"
+}
