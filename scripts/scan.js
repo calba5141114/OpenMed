@@ -6,12 +6,13 @@ async function getMarkdownfiles(){
   const response = await fetch(dir);
   const data = await response.json();
 
+  // for every document in the directory
   for (page of data) {
+    // fetching markdown document
     const pageData = await fetch(`${rootDirectory}/${page.title}`)
-    console.log(`${rootDirectory}/${page.title}`);
+    // converting page data to an arrayBuffer
     const loaded = await pageData.arrayBuffer()
     var string = new TextDecoder("utf-8").decode(loaded);
-    console.log(string);
     const generatedHTML =  converter.makeHtml(string);
     console.log(generatedHTML);
   }
