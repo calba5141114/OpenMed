@@ -6,13 +6,26 @@ const fmt = title => {
   return title.split('-')[1]
 }
 
+/**
+ * 
+ * @param {*} title - File to be decoded. 
+ */
 async function spawnMarkdown(title) {
+  /**
+   * Fetches and Decodes Markdown from documents directory of project.
+   */
   const loaded = await(await fetch(`${root}/${title}`)).arrayBuffer();
   let string = new TextDecoder("utf-8").decode(loaded);
+  /**
+   * Evaluates markdown to HTML and opens it as a pop up on our App.
+   */
   const generatedHTML = converter.makeHtml(string);
   window.open("").document.write(generatedHTML);
 }
 
+/**
+ * Fetches markdown documents information from directories on github
+ */
 async function getMarkdownfiles() {
   /**
    * Fetching and parsing data from documents.json file 
