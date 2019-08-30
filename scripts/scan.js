@@ -1,10 +1,19 @@
+/**
+ * Running preliminary checks for Filereader API needed to 
+ * assess and evaluate Markdown with Showdown. 
+ */
+(function () {
+  if (window.File && window.FileReader && window.FileList && window.Blob) {
+    getMarkdownfiles();
+  } else {
+    alert('The File APIs are not fully supported in this browser.');
+    throw (new Error("File APIs are not fully supported in this browser."))
+  }
+})();
+
 const converter = new showdown.Converter();
 const root = 'https://calba5141114.github.io/OpenMed/documents';
 const links = document.querySelector('#linkList');
-
-const fmt = title => {
-  return title.split('-')[1]
-}
 
 /**
  * 
@@ -14,7 +23,7 @@ async function spawnMarkdown(title) {
   /**
    * Fetches and Decodes Markdown from documents directory of project.
    */
-  const loaded = await(await fetch(`${root}/${title}`)).arrayBuffer();
+  const loaded = await (await fetch(`${root}/${title}`)).arrayBuffer();
   let string = new TextDecoder("utf-8").decode(loaded);
   /**
    * Evaluates markdown to HTML and opens it as a pop up on our App.
@@ -34,6 +43,14 @@ async function getMarkdownfiles() {
   const dir = 'https://calba5141114.github.io/OpenMed/documents/documents.json';
   const data = await (await fetch(dir)).json();
 
+
+  /**
+   * Formats less human readable names to more human readable ones. 
+   */
+  const fmt = title => {
+    return title.split('-')[1]
+  }
+
   /**
    * Generate a link for every object in the Markdown File Directory
    */
@@ -45,12 +62,4 @@ async function getMarkdownfiles() {
     `
   });
 
-}
-
-
-if (window.File && window.FileReader && window.FileList && window.Blob) {
-  getMarkdownfiles();
-} else {
-  alert('The File APIs are not fully supported in this browser.');
-  throw (new Error("File APIs are not fully supported in this browser."))
 }

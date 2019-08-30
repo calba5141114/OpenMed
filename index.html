@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Open Med</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js" charset="utf-8"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-  </head>
-  <body>
 
+<head>
+  <meta charset="utf-8">
+  <title>Open Med</title>
+  <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <br>
+  <div class="container">
+    <h1>Open Medicine</h1>
     <br>
-    <div class="container">
-      <h1 class="display-4">Open Medicine</h1>
-      <br>
-      <div class="panel panel-primary" id="result_panel">
-          <div class="panel-heading"><h3 class="panel-title">Articles</h3>
-          </div>
-          <div class="panel-body">
-              <ul id="linkList" class="list-group">
-              </ul>
-          </div>
-      </div>
-
+    <div class="panel panel-primary" id="result_panel">
+      <h3 class="panel-title">Articles</h3>
+      <ul id="linkList" class="list-group list-holder">
+      </ul>
     </div>
 
-    <script src="./scripts/scan.js" charset="utf-8"></script>
+  </div>
 
-  </body>
+  <script src="./scripts/scan.js" charset="utf-8"></script>
+
+</body>
+
 </html>
