@@ -27,3 +27,8 @@
     color: grey;
 }
 
+.navigational-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
