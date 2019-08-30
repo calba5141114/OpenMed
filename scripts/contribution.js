@@ -1,5 +1,5 @@
 const contribution = document.querySelector("#contribution-markdown");
-const contributionMarkdown = "https://github.com/calba5141114/OpenMed/blob/master/CONTRIBUTE.md";
+const contributionMarkdown = "https://raw.githubusercontent.com/calba5141114/OpenMed/master/CONTRIBUTE.md";
 const converter = new showdown.Converter();
 
 (async function () {
